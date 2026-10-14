@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - Satria Galuh Saroni</title>
+    <!-- FontAwesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* VARIABEL CSS UNTUK LIGHT MODE (DEFAULT) */
+        :root {
+            --primary-color: #1a252f;
+            --secondary-color: #3498db;
+            --accent-color: #2980b9;
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --text-muted: #555;
+            --card-bg: #fff;
+            --brand-color: #00b894; /* Teal */
+            --nav-bg: rgba(255, 255, 255, 0.95);
+            --border-color: #f0f0f0;
+            --badge-bg: #f1f3f5;
+            --timeline-border: #eaeaea;
+        }
+
+        /* VARIABEL CSS UNTUK DARK MODE */
+        [data-theme="dark"] {
+            --primary-color: #ecf0f1;
+            --secondary-color: #3498db;
+            --accent-color: #2980b9;
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --text-muted: #aaa;
+            --card-bg: #1e1e1e;
+            --brand-color: #00d2a0;
+            --nav-bg: rgba(18, 18, 18, 0.95);
+            --border-color: #333;
+            --badge-bg: #2a2a2a;
+            --timeline-border: #333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            transition: color 0.4s ease;
+        }
+
+        /* --- NAVBAR --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--nav-bg);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .nav-brand {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: var(--brand-color);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            text-transform: lowercase;
+            transition: color 0.4s ease;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.85em;
+            transition: color 0.3s ease, background 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+            background: rgba(52, 152, 219, 0.1);
+        }
+
+        /* TOGGLE DARK MODE */
+        .theme-toggle-container {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-left: 10px;
+        }
+
+        .theme-label {
+            font-size: 0.75em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 50px;
+            height: 24px;
+            background-color: #cbd5e1;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            padding: 2px;
+        }
+
+        [data-theme="dark"] .toggle-switch {
+            background-color: var(--brand-color);
+        }
+
+        .toggle-circle {
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+
+        [data-theme="dark"] .toggle-circle {
+            transform: translateX(26px);
+        }
+
+        /* --- HOME / HERO SECTION BARU --- */
+        #home {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(-45deg, #0f171e, #1a252f, #2980b9, #0f171e);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: white;
+            padding: 100px 8% 50px; /* Padding top untuk navbar */
+            gap: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        [data-theme="dark"] #home {
+            background: linear-gradient(-45deg, #050505, #121212, #1f3b4d, #050505);
+            background-size: 400% 400%;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .home-content {
+            flex: 1;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            z-index: 2;
+        }
+
+        #home h1 {
+            color: white;
+            font-size: 3.8em;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            line-height: 1.2;
+            opacity: 0;
+            transform: translateY(-30px);
+            animation: slideDownFade 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            animation-delay: 0.3s;
+        }
+
+        #home p {
+            font-size: 1.15em;
+            margin-bottom: 40px;
+            opacity: 0;
+            font-weight: 300;
+            color: rgba(255,255,255,0.9);
+            transform: translateY(20px);
+            animation: slideUpFade 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            animation-delay: 0.6s;
+        }
+
+        .btn-explore {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 12px 35px;
+            font-size: 1em;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeInBounce 1.5s ease forwards;
+            animation-delay: 1.2s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 1px;
+        }
+
+        .btn-explore:hover {
+            background: white;
+            color: #1a252f;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn-explore i {
+            animation: bounce 2s infinite;
+        }
+
+        /* Foto Hero Style (Blob Masking + Shadow Accent) */
+        .home-image-wrapper {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: popIn 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            animation-delay: 0.8s;
+            z-index: 2;
+        }
+
+        .home-img {
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            animation: morph 8s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Latar Belakang Shape / Aksen di belakang foto */
+        .home-image-wrapper::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            max-width: 420px;
+            aspect-ratio: 1;
+            background: var(--brand-color);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            animation: morph 10s ease-in-out infinite reverse;
+            z-index: 1;
+            opacity: 0.8;
+            top: 5%;
+            right: 5%;
+        }
+
+        /* Keyframes */
+        @keyframes slideDownFade { to { opacity: 1; transform: translateY(0); } }
+        @keyframes slideUpFade { to { opacity: 1; transform: translateY(0); } }
+        @keyframes popIn { to { opacity: 1; transform: scale(1); } }
+        @keyframes fadeInBounce { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-5px); } 60% { transform: translateY(-3px); } }
+        @keyframes morph {
+            0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+            100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+        }
+
+        /* --- SISA CSS KONTEN --- */
+        .container {
+            max-width: 1050px;
+            margin: auto;
+            padding: 60px 20px;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Profile Section */
+        .profile-header {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 50px;
+            transition: background 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 15px;
+            object-fit: cover;
+            border: 4px solid var(--card-bg);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.02) translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-info h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .profile-info p {
+            font-weight: 300;
+            color: var(--text-muted);
+            font-size: 1.05em;
+            transition: color 0.4s ease;
+        }
+
+        .contact-info {
+            margin: 25px 0;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a, .contact-info span {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.9em;
+            background: var(--badge-bg);
+            padding: 10px 18px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-weight: 400;
+        }
+
+        .contact-info a:hover {
+            background: var(--secondary-color);
+            color: white;
+            box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn-download {
+            display: inline-block;
+            background: var(--secondary-color);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            margin-top: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+            letter-spacing: 0.5px;
+        }
+
+        .btn-download:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(41, 128, 185, 0.5);
+        }
+
+        /* Section Global */
+        section.content-section {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            transition: background 0.4s ease;
+        }
+
+        section.content-section > h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        section.content-section > h2::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: var(--secondary-color);
+            opacity: 0.2;
+            margin-left: 10px;
+        }
+
+        section.content-section > h2 i {
+            color: var(--secondary-color);
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .skill-item i {
+            font-size: 2em;
+            color: var(--secondary-color);
+            width: 40px;
+            text-align: center;
+        }
+
+        .progress-bar {
+            flex-grow: 1;
+            background: var(--border-color);
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+            margin-top: 5px;
+            transition: background 0.4s ease;
+        }
+
+        .progress {
+            background: linear-gradient(90deg, var(--secondary-color), #2980b9);
+            height: 100%;
+            border-radius: 4px;
+            width: 0; 
+            transition: width 1.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .skill-item span {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 0.95em;
+            transition: color 0.4s ease;
+        }
+
+        /* Timeline */
+        .timeline-item {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 35px;
+            padding-bottom: 35px;
+            border-bottom: 1px solid var(--border-color);
+            transition: transform 0.3s ease, border-color 0.4s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .timeline-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            border-radius: 10px;
+            padding: 8px;
+            border: 1px solid var(--timeline-border);
+            background: #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.4em;
+            margin-bottom: 5px;
+        }
+
+        .timeline-content .meta {
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-size: 0.9em;
+            margin-bottom: 12px;
+            display: inline-block;
+            background: rgba(52, 152, 219, 0.1);
+            padding: 5px 12px;
+            border-radius: 20px;
+        }
+
+        .timeline-content p {
+            color: var(--text-muted);
+            font-weight: 300;
+            transition: color 0.4s ease;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            border-color: var(--secondary-color);
+        }
+
+        .project-img-wrapper {
+            overflow: hidden;
+        }
+
+        .project-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .project-card:hover .project-img {
+            transform: scale(1.08);
+        }
+
+        .project-info {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-info h3 {
+            font-size: 1.15em;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        [data-theme="dark"] .project-meta {
+            color: #121212;
+            background: var(--primary-color);
+        }
+
+        .project-meta {
+            font-size: 0.8em;
+            color: white;
+            background: var(--primary-color);
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            align-self: flex-start;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background 0.4s ease, color 0.4s ease;
+        }
+
+        .project-desc {
+            font-size: 0.9em;
+            color: var(--text-muted);
+            font-weight: 300;
+            transition: color 0.4s ease;
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            background-color: #0b1120;
+            color: #94a3b8;
+            padding: 50px 20px 40px;
+            text-align: center;
+            border-top: 1px solid #1e293b;
+        }
+
+        [data-theme="dark"] .footer {
+            background-color: #050505;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border: 1px solid #94a3b8;
+            border-radius: 50%;
+            color: #94a3b8;
+            font-size: 1.1em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            border-color: var(--brand-color);
+            color: var(--brand-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-text {
+            font-size: 0.9em;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-text .highlight {
+            color: var(--brand-color);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-text .highlight:hover {
+            text-decoration: underline;
+        }
+
+        /* --- RESPONSIVE MOBILE --- */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                padding: 15px;
+                gap: 15px;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            .theme-toggle-container {
+                margin: 0;
+            }
+            #home {
+                flex-direction: column-reverse; /* Foto di atas, Teks di bawah */
+                text-align: center;
+                padding-top: 150px;
+                gap: 30px;
+            }
+            .home-content {
+                align-items: center;
+                text-align: center;
+            }
+            #home h1 {
+                font-size: 2.8em;
+                text-align: center;
+            }
+            #home p {
+                text-align: center;
+            }
+            .home-image-wrapper::before {
+                right: auto; /* Memusatkan aksen shape di HP */
+            }
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+            }
+            .contact-info {
+                justify-content: center;
+            }
+            .timeline-item {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            .timeline-logo {
+                margin: 0 auto;
+            }
+            section.content-section {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR NAVIGATION -->
+    <nav>
+        <a href="#home" class="nav-brand">satria galuh saroni</a>
+        
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#profile">Profile</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#education">Education</a>
+            <a href="#projects">Projects</a>
+            
+            <!-- TOMBOL SWITCH DARK MODE -->
+            <div class="theme-toggle-container">
+                <span class="theme-label">light</span>
+                <div id="theme-toggle" class="toggle-switch">
+                    <div class="toggle-circle"></div>
+                </div>
+                <span class="theme-label">dark</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HOME / HERO SECTION -->
+    <section id="home">
+        <!-- Teks Kiri -->
+        <div class="home-content">
+            <h1>Satria Galuh Saroni</h1>
+            <p>Diploma III in Electronics Engineering Graduate</p>
+            <a href="#profile" class="btn-explore">Explore My Profile <i class="fas fa-arrow-down"></i></a>
+        </div>
+        
+        <!-- Foto Kanan (dengan masking organik) -->
+        <div class="home-image-wrapper">
+            <img src="images/foto.jpeg" alt="Satria Galuh Saroni" class="home-img" onerror="this.src='https://via.placeholder.com/400'">
+        </div>
+    </section>
+
+    <div class="container">
+        
+        <!-- PROFILE SECTION -->
+        <div id="profile" class="profile-header reveal">
+            <img src="images/Profile.jpeg" alt="Satria Galuh Saroni" class="profile-img" onerror="this.src='https://via.placeholder.com/200'">
+            <div class="profile-info">
+                <h2>Satria Galuh Saroni</h2>
+                <p>A graduate of Diploma III in Electronics Engineering from Politeknik Negeri Semarang with expertise in the field of electronics and currently seeking a career opportunity as an Electronics Technician. During school and college, responsible for completing various project assignments that helped develop a diligent, disciplined, and responsible character. Also enthusiastic about exploring and improving skills related to electronic.</p>
+                
+                <div class="contact-info">
+                    <span><i class="fas fa-envelope"></i> satria.galuh.saroni@gmail.com</span>
+                    <span><i class="fas fa-phone"></i> +62 (856) 4347-5147</span>
+                    <a href="https://linkedin.com/in/satria-galuh-81aa77383" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/satriagaluh" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+
+                <a href="docs/cv.pdf" class="btn-download" download><i class="fas fa-file-pdf"></i> Download CV</a>
+            </div>
+        </div>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="content-section reveal">
+            <h2><i class="fas fa-tools"></i> Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="fas fa-wifi"></i>
+                    <div style="flex-grow: 1;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                            <span>Internet of Things</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress" data-width="80%"></div></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-desktop"></i>
+                    <div style="flex-grow: 1;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                            <span>Hardware Design</span>
+                            <span>60%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress" data-width="60%"></div></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-c"></i>
+                    <div style="flex-grow: 1;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                            <span>Hardware Programming</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress" data-width="75%"></div></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-js"></i>
+                    <div style="flex-grow: 1;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                            <span>Web Programming</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress" data-width="85%"></div></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-list-check"></i>
+                    <div style="flex-grow: 1;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                            <span>Project Management</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress" data-width="90%"></div></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-list-check"></i>
+                    <div style="flex-grow: 1;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                            <span>Service Tune Up</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress" data-width="90%"></div></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-list-check"></i>
+                    <div style="flex-grow: 1;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                            <span>Wheel Balencing</span>
+                            <span>65%</span>
+                        </div>
+                        <div class="progress-bar"><div class="progress" data-width="90%"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE SECTION -->
+        <section id="experience" class="content-section reveal">
+            <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
+            
+            <div class="timeline-item">
+                <img src="images/internship-logo.jpeg" alt="PT Bambang Djaja" class="timeline-logo" onerror="this.src='https://via.placeholder.com/80'">
+                <div class="timeline-content">
+                    <h3>Maintenance Technician</h3>
+                    <div class="meta"><i class="far fa-building"></i> PT Bambang Djaja | <i class="far fa-calendar-alt"></i> Sept - Dec 2025</div>
+                    <p>Industrial machine maintenance, electrical troubleshooting, wiring repair, and production system maintenance.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <img src="images/pt-logo.jpeg" alt="PT Sun Star Motor" class="timeline-logo" onerror="this.src='https://via.placeholder.com/80'">
+                <div class="timeline-content">
+                    <h3>Mechanical Technician</h3>
+                    <div class="meta"><i class="far fa-building"></i> PT Sun Star Motor | <i class="far fa-calendar-alt"></i> july - Dec 2022</div>
+                    <p>Vehicle maintenance, electrical diagnostics, tune-up, and periodic service operations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION SECTION -->
+        <section id="education" class="content-section reveal">
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+            
+            <div class="timeline-item">
+                <img src="images/polines-logo.png" alt="Politeknik Negeri Semarang" class="timeline-logo" onerror="this.src='https://via.placeholder.com/80'">
+                <div class="timeline-content">
+                    <h3>Electrical Engineering</h3>
+                    <div class="meta"><i class="fas fa-university"></i> Politeknik Negeri Semarang | <i class="far fa-calendar-alt"></i> 2023 - 2026</div>
+                    <p>GPA 3.52 of 4; Focused on electronics engineering, embedded systems, and IoT-based system development. Actively involved in engineering projects such as Arduino-based automation, ESP32 systems, and instrumentation design with strong emphasis on real-world applications.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <img src="images/smk-logo.jpeg" alt="SMK Negeri 2 Kendal" class="timeline-logo" onerror="this.src='https://via.placeholder.com/80'">
+                <div class="timeline-content">
+                    <h3>TKRO (light vehicle automotive engineering)</h3>
+                    <div class="meta"><i class="fas fa-school"></i> SMK Negeri 2 Kendal | <i class="far fa-calendar-alt"></i> 2020 - 2023</div>
+                    <p>Built strong technical foundations in automotive systems, electrical troubleshooting, and mechanical practice. Developed discipline, teamwork, and early exposure to electronics and microcontroller systems</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="content-section reveal">
+            <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="images/project1.jpeg" alt="IoT Multisensor" class="project-img" onerror="this.src='https://via.placeholder.com/400x300'">
+                    </div>
+                    <div class="project-info">
+                        <h3>DESIGN AND DEVELOPMENT OF AN IOT-BASED MULTISENSOR MONITORING SYSTEM FOR MONITORING TEMPERATURE, HUMIDITY, PH, AND TDS PARAMETERS IN THE AGRICULTURE INDUSTRY</h3>
+                        <div class="project-meta">Final Project (2026)</div>
+                        <p class="project-desc">This system is designed to support precision agriculture by monitoring environmental conditions in real-time using temperature, humidity, pH, and TDS sensors. The data from the sensors is processed using an IoT-based microcontroller and sent to a monitoring platform so it can be accessed remotely.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="images/project2.jpeg" alt="Firefighting Robot" class="project-img" onerror="this.src='https://via.placeholder.com/400x300'">
+                    </div>
+                    <div class="project-info">
+                        <h3>Design and Build a Firefighting Robot Using Bluetooth and Virtual Reality Control</h3>
+                        <div class="project-meta">Sensor and Transducer project (2024)</div>
+                        <p class="project-desc">This project develops a firefighting robot that can be controlled using Bluetooth technology and a Virtual Reality (VR) interface. This system allows the operator to control the robot immersively to detect and extinguish fires in dangerous areas without direct contact.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="images/project3.jpeg" alt="Fire Extinguisher" class="project-img" onerror="this.src='https://via.placeholder.com/400x300'">
+                    </div>
+                    <div class="project-info">
+                        <h3>Automatic Fire Extinguisher With With Assembler Language</h3>
+                        <div class="project-meta">Microcontroller Project (2025)</div>
+                        <p class="project-desc">This system is an automatic fire extinguisher device based on an embedded system, programmed using Assembly language to provide low-level control. The system is designed to detect fire conditions and automatically activate the extinguishing mechanism.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="images/project4.jpeg" alt="Egg Incubator" class="project-img" onerror="this.src='https://via.placeholder.com/400x300'">
+                    </div>
+                    <div class="project-info">
+                        <h3>Implementation of a Temperature Control System in an Automatic Egg Incubator Based on Arduino with Temperature Monitoring and Setpoint via GUI</h3>
+                        <div class="project-meta">Computer-Based Control Project (2025)</div>
+                        <p class="project-desc">This project implements an Arduino-based automatic egg incubator system equipped with temperature control and monitoring through a GUI interface. Users can set the temperature setpoint and monitor the incubation conditions in real-time.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img-wrapper">
+                        <img src="images/project5.jpeg" alt="Motor RPM" class="project-img" onerror="this.src='https://via.placeholder.com/400x300'">
+                    </div>
+                    <div class="project-info">
+                        <h3>Motor RPM Measurement Control System Using IR Speed Sensor and Arduino</h3>
+                        <div class="project-meta">discrete control system project (2026)</div>
+                        <p class="project-desc">This project develops a motor rotation speed (RPM) measurement system using an infrared (IR) sensor and an Arduino microcontroller. The system can read rotation changes in real-time and convert them into accurate RPM values.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <!-- BAGIAN FOOTER -->
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="https://www.instagram.com/satzglh_" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@satzglh_" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://linkedin.com/in/satria-galuh-81aa77383" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p class="footer-text">Made with <span style="color: #ef4444;">❤️</span> by <a href="#home" class="highlight">Satria Galuh Saroni</a></span>.</p>
+    </footer>
+
+    <!-- Script untuk animasi dan DARK MODE Toggle -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // --- SCRIPT DARK MODE ---
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            
+            // Cek localStorage
+            const currentTheme = localStorage.getItem('theme');
+            if (currentTheme === 'dark') {
+                document.body.setAttribute('data-theme', 'dark');
+            }
+
+            themeToggleBtn.addEventListener('click', function() {
+                if (document.body.getAttribute('data-theme') === 'dark') {
+                    document.body.removeAttribute('data-theme');
+                    localStorage.setItem('theme', 'light');
+                } else {
+                    document.body.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark');
+                }
+            });
+
+            // --- SCRIPT ANIMASI SCROLL ---
+            const reveals = document.querySelectorAll(".reveal");
+            const progressBars = document.querySelectorAll(".progress");
+
+            function revealOnScroll() {
+                let windowHeight = window.innerHeight;
+                let elementVisible = 100;
+
+                reveals.forEach((reveal) => {
+                    let elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add("active");
+                    }
+                });
+
+                progressBars.forEach((bar) => {
+                    let elementTop = bar.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        bar.style.width = bar.getAttribute("data-width");
+                    }
+                });
+            }
+
+            window.addEventListener("scroll", revealOnScroll);
+            setTimeout(revealOnScroll, 500); 
+        });
+    </script>
+</body>
+</html>
