@@ -1,0 +1,16 @@
+[
+    {
+        "company": "PT Bambang Djaja",
+		"logo":"images/internship-logo.jpeg",
+        "position": "Maintenance Technician",
+        "year": " Sept - Dec 2025 ",
+        "description": "Industrial machine maintenance, electrical troubleshooting, wiring repair, and production system maintenance."
+    },
+	{
+        "company": "PT Sun Star Motor",
+		"logo":"images/pt-logo.jpeg",
+        "position": "Mechanical Technician",
+        "year": "july - Dec 2022",
+        "description": "Vehicle maintenance, electrical diagnostics, tune-up, and periodic service operations."
+    }   
+]

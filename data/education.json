@@ -1,0 +1,16 @@
+[
+    {
+        "university": "Politeknik Negeri Semarang",
+		"logo": "images/polines-logo.png",
+        "major": "Electrical Engineering",
+        "year": "2023 - 2026",
+        "description": "GPA 3.52 of 4; Focused on electronics engineering, embedded systems, and IoT-based system development. Actively involved in engineering projects such as Arduino-based automation, ESP32 systems, and instrumentation design with strong emphasis on real-world applications."
+    },
+    {
+        "university": "SMK Negeri 2 Kendal",
+		"logo": "images/smk-logo.jpeg",
+        "major": "TKRO (light vehicle automotive engineering) ",
+        "year": "2020 - 2023",
+        "description": "Built strong technical foundations in automotive systems, electrical troubleshooting, and mechanical practice. Developed discipline, teamwork, and early exposure to electronics and microcontroller systems"
+    }
+]

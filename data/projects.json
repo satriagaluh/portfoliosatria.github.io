@@ -1,0 +1,37 @@
+[
+    {
+        "title": "DESIGN AND DEVELOPMENT OF AN IOT-BASED MULTISENSOR MONITORING SYSTEM FOR MONITORING TEMPERATURE, HUMIDITY, PH, AND TDS PARAMETERS IN THE AGRICULTURE INDUSTRY",
+        "year": "2026",
+        "role": "Final Project",
+        "description": "This system is designed to support precision agriculture by monitoring environmental conditions in real-time using temperature, humidity, pH, and TDS sensors. The data from the sensors is processed using an IoT-based microcontroller and sent to a monitoring platform so it can be accessed remotely.",
+        "image": "images/project1.jpeg"
+    },
+    {
+        "title": "Design and Build a Firefighting Robot Using Bluetooth and Virtual Reality Control",
+        "year": "2024",
+        "role": "Sensor and Transducer project",
+        "description": "This project develops a firefighting robot that can be controlled using Bluetooth technology and a Virtual Reality (VR) interface. This system allows the operator to control the robot immersively to detect and extinguish fires in dangerous areas without direct contact.",
+        "image": "images/project2.jpeg"
+    },
+	{
+        "title": "Automatic Fire Extinguisher With With Assembler Language",
+        "year": "2025",
+        "role": "Microcontroller Project",
+        "description": "This system is an automatic fire extinguisher device based on an embedded system, programmed using Assembly language to provide low-level control. The system is designed to detect fire conditions and automatically activate the extinguishing mechanism.",
+        "image": "images/project3.jpeg"
+    },
+    {
+        "title": "Implementation of a Temperature Control System in an Automatic Egg Incubator Based on Arduino with Temperature Monitoring and Setpoint via GUI",
+        "year": "2025",
+        "role": "Computer-Based Control Project",
+        "description": "This project implements an Arduino-based automatic egg incubator system equipped with temperature control and monitoring through a GUI interface. Users can set the temperature setpoint and monitor the incubation conditions in real-time.",
+        "image": "images/project4.jpeg"
+    },
+	{
+        "title": "Motor RPM Measurement Control System Using IR Speed Sensor and Arduino",
+        "year": "2026",
+        "role": "discrete control system project",
+        "description": "This project develops a motor rotation speed (RPM) measurement system using an infrared (IR) sensor and an Arduino microcontroller. The system can read rotation changes in real-time and convert them into accurate RPM values.",
+        "image": "images/project5.jpeg"
+    }
+]

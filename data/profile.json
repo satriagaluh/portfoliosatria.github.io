@@ -1,0 +1,29 @@
+{
+    "name": "Satria Galuh Saroni",
+    "description": "A graduate of Diploma III in Electronics Engineering from Politeknik Negeri Semarang with expertise in the field of electronics and currently seeking a career opportunity as an Electronics Technician. During school and college, responsible for completing various project assignments that helped develop a diligent, disciplined, and responsible character. Also enthusiastic about exploring and improving skills related to electronic",
+    "profileImage": "images/Profile.jpeg",
+    "email": "satriagaluh@polines.ac.id",
+    "phone": "+62 (856) 4347-5147",
+    "socialMedia": [
+        {
+            "platform": "LinkedIn",
+            "url": "https://linkedin.com/in/satria-galuh-81aa77383"
+        },
+        {
+            "platform": "GitHub",
+            "url": "https://github.com/satriagaluh"
+        }
+    ],
+    "cv": {
+			"text": "Download CV",
+			"file": "docs/cv.pdf",
+			"icon": "fas fa-file-pdf"
+	},
+    "skills": [
+        {"name": "Internet of Things", "icon": "fas fa-wifi", "level": 80},
+        {"name": "Hardware Design", "icon": "fas fa-desktop", "level": 60},
+	{"name": "Hardware Programming", "icon": "fas fa-c", "level": 75},
+        {"name": "Web Programming", "icon": "fab fa-js", "level": 85},
+	{"name": "Project Management", "icon": "fas fa-list-check", "level": 90}
+    ]
+}
